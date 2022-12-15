@@ -342,7 +342,7 @@ do
         local ColorPicker = {
             Value = Info.Default;
             Type = 'ColorPicker';
-            Title = type(Info.Title) == 'string' and Info.Title or 'Color picker',
+            Title = type(Info.Title) == 'string' and Info.Title or 'Цвет',
         };
 
         function ColorPicker:SetHSVFromRGB(Color)
