@@ -252,11 +252,11 @@ local SaveManager = {} do
 			Options.SaveManager_ConfigList:SetValue(nil)
 		end)
 
-		SaveManager.AutoloadLabel = section:AddLabel('Current autoload config: none', true)
+		SaveManager.AutoloadLabel = section:AddLabel('Текущий автозагружаемый конфиг: none', true)
 
 		if isfile(self.Folder .. '/settings/autoload.txt') then
 			local name = readfile(self.Folder .. '/settings/autoload.txt')
-			SaveManager.AutoloadLabel:SetText('Current autoload config: ' .. name)
+			SaveManager.AutoloadLabel:SetText('Текущий автозагружаемый конфиг: ' .. name)
 		end
 
 		SaveManager:SetIgnoreIndexes({ 'SaveManager_ConfigList', 'SaveManager_ConfigName' })
