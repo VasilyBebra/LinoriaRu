@@ -195,12 +195,12 @@ local SaveManager = {} do
 
 		local section = tab:AddRightGroupbox('Configuration')
 
-		section:AddDropdown('SaveManager_ConfigList', { Text = 'Config list', Values = self:RefreshConfigList(), AllowNull = true })
-		section:AddInput('SaveManager_ConfigName',    { Text = 'Config name' })
+		section:AddDropdown('SaveManager_ConfigList', { Text = 'Список конфигураций', Values = self:RefreshConfigList(), AllowNull = true })
+		section:AddInput('SaveManager_ConfigName',    { Text = 'Имя конфигурации' })
 
 		section:AddDivider()
 
-		section:AddButton('Create config', function()
+		section:AddButton('Создать конфиг', function()
 			local name = Options.SaveManager_ConfigName.Value
 
 			if name:gsub(' ', '') == '' then 
@@ -209,15 +209,15 @@ local SaveManager = {} do
 
 			local success, err = self:Save(name)
 			if not success then
-				return self.Library:Notify('Failed to save config: ' .. err)
+				return self.Library:Notify('Не удалось сохранить конфигурацию: ' .. err)
 			end
 
-			self.Library:Notify(string.format('Created config %q', name))
+			self.Library:Notify(string.format('Создана конфигурация %q', name))
 
 			Options.SaveManager_ConfigList.Values = self:RefreshConfigList()
 			Options.SaveManager_ConfigList:SetValues()
 			Options.SaveManager_ConfigList:SetValue(nil)
-		end):AddButton('Load config', function()
+		end):AddButton('Загрузить конфиг', function()
 			local name = Options.SaveManager_ConfigList.Value
 
 			local success, err = self:Load(name)
