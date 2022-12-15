@@ -681,7 +681,7 @@ do
         local KeyPicker = {
             Value = Info.Default;
             Toggled = false;
-            Mode = Info.Mode or 'Переключение'; -- Always, Toggle, Hold
+            Mode = Info.Mode or 'Toggle'; -- Always, Toggle, Hold
             Type = 'KeyPicker';
 
             SyncToggleState = Info.SyncToggleState or false;
@@ -768,7 +768,7 @@ do
             Parent = Library.KeybindContainer;
         },  true);
 
-        local Modes = Info.Modes or { 'Всегда', 'Переключение', 'Зажатие' };
+        local Modes = Info.Modes or { 'Always', 'Toggle', 'Hold' };
         local ModeButtons = {};
 
         for Idx, Mode in next, Modes do
