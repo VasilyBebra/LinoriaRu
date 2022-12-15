@@ -2261,7 +2261,7 @@ do
         Position = UDim2.fromOffset(5, 2),
         TextXAlignment = Enum.TextXAlignment.Left,
         
-        Text = 'Keybinds';
+        Text = 'Клавиши';
         ZIndex = 104;
         Parent = KeybindInner;
     });
