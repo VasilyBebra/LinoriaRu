@@ -688,8 +688,8 @@ do
         };
 
         if KeyPicker.SyncToggleState then
-            Info.Modes = { 'Переключение' }
-            Info.Mode = 'Переключение'
+            Info.Modes = { 'Toggle' }
+            Info.Mode = 'toggle'
         end
 
         local RelativeOffset = 0;
