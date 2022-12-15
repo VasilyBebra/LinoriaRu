@@ -193,7 +193,7 @@ local SaveManager = {} do
 	function SaveManager:BuildConfigSection(tab)
 		assert(self.Library, 'Must set SaveManager.Library')
 
-		local section = tab:AddRightGroupbox('Configuration')
+		local section = tab:AddRightGroupbox('Конфигурация')
 
 		section:AddDropdown('SaveManager_ConfigList', { Text = 'Список конфигураций', Values = self:RefreshConfigList(), AllowNull = true })
 		section:AddInput('SaveManager_ConfigName',    { Text = 'Имя конфигурации' })
@@ -228,7 +228,7 @@ local SaveManager = {} do
 			self.Library:Notify(string.format('Loaded config %q', name))
 		end)
 
-		section:AddButton('Overwrite config', function()
+		section:AddButton('Перезаписать конфиг', function()
 			local name = Options.SaveManager_ConfigList.Value
 
 			local success, err = self:Save(name)
@@ -239,14 +239,14 @@ local SaveManager = {} do
 			self.Library:Notify(string.format('Overwrote config %q', name))
 		end)
 		
-		section:AddButton('Autoload config', function()
+		section:AddButton('Автозагрузка конфига', function()
 			local name = Options.SaveManager_ConfigList.Value
 			writefile(self.Folder .. '/settings/autoload.txt', name)
-			SaveManager.AutoloadLabel:SetText('Current autoload config: ' .. name)
+			SaveManager.AutoloadLabel:SetText('Текущий автозагружаемый конфиг: ' .. name)
 			self.Library:Notify(string.format('Set %q to auto load', name))
 		end)
 
-		section:AddButton('Refresh config list', function()
+		section:AddButton('Обновить список конфигов', function()
 			Options.SaveManager_ConfigList.Values = self:RefreshConfigList()
 			Options.SaveManager_ConfigList:SetValues()
 			Options.SaveManager_ConfigList:SetValue(nil)
