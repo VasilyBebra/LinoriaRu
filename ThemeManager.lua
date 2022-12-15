@@ -159,7 +159,7 @@ local ThemeManager = {} do
 
 	function ThemeManager:SaveCustomTheme(file)
 		if file:gsub(' ', '') == '' then
-			return self.Library:Notify('Invalid file name for theme (empty)', 3)
+			return self.Library:Notify('Неверное имя файла (пустое)', 3)
 		end
 
 		local theme = {}
