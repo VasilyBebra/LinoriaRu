@@ -204,7 +204,7 @@ local SaveManager = {} do
 			local name = Options.SaveManager_ConfigName.Value
 
 			if name:gsub(' ', '') == '' then 
-				return self.Library:Notify('Invalid config name (empty)', 2)
+				return self.Library:Notify('Неверное имя файла (пустое)', 2)
 			end
 
 			local success, err = self:Save(name)
